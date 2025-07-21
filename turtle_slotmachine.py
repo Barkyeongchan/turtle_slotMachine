@@ -1,65 +1,4 @@
 '''
-# 개인 프로젝트
-# turtle을 활용한 슬롯머신 만들기
-
-import turtle
-import random
-
-# 줄(배경) 생성
-line_maker = turtle.Turtle()
-line_maker.penup()
-line_maker.goto(-300, 0)
-line_maker.pendown()
-line_maker.goto(-105, 0)
-
-line_maker.penup()
-line_maker.goto(-95, 0)
-line_maker.pendown()
-line_maker.goto(95, 0)
-
-line_maker.penup()
-line_maker.goto(105, 0)
-line_maker.pendown()
-line_maker.goto(300, 0)
-
-line_maker.penup()
-line_maker.goto(-200, 100)
-line_maker.pendown()
-line_maker.goto(-200, -100)
-
-line_maker.penup()
-line_maker.goto(0, 100)
-line_maker.pendown()
-line_maker.goto(0, -100)
-
-line_maker.penup()
-line_maker.goto(200, 100)
-line_maker.pendown()
-line_maker.goto(200, -100)
-
-# 1번 슬롯
-position_one = line_maker.clone()
-position_one.shape("turtle")
-position_one.fillcolor("red")
-position_one.penup()
-position_one.goto(-200, -50)
-
-# 2번 슬롯
-position_two = position_one.clone()
-position_two.shape("turtle")
-position_two.fillcolor("blue")
-position_two.penup()
-position_two.goto(0, -50)
-
-# 3번 슬롯
-position_three = position_two.clone()
-position_three.shape("turtle")
-position_three.fillcolor("green")
-position_three.penup()
-position_three.goto(200, -50)
-'''
-#--------------------------------------------------------------------------
-'''
 목표: turtle을 활용하여 슬롯머신을 만들어본다.
 '''
 import turtle
@@ -123,14 +62,7 @@ def start_spin():
         threads.append(thread)
         thread.start()
 
-
-# screen.listen()            # ← 삭제됨
-# screen.onkey(start_spin, "Return")  # ← 삭제됨
-
 print("엔터를 누르세요")
-
-input() # 터미널에서 엔터 입력 받기위해 추가함, 원래는 없었음
-
-start_spin()  # ← 추가됨: 직접 함수 호출로 회전 시작 (이전엔 키 입력 대기 방식)
-
+input()
+start_spin()
 turtle.done()
